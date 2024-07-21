@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Practice</title>
+    <style>
+        .container {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: black;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body class="container">
+<div id="mainContainer" class="container">
+    <h1 id="header">Welcome to DOM Manipulation Practice</h1>
+    <p class="para">This is a sample paragraph to practice JavaScript DOM manipulation.</p>
+    <img src="" class="img">
+    <ul id="itemList">
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+        <li class="item">Item 3</li>
+    </ul>
+    <button id="changeTextButton">Change Text</button>
+</div>
+
+
+<!--// Activity 1 -> Selecting and manipulating elements.-->
+<script>
+    // Task 1 -> Select an HTML element by its id and change its context.
+    document.getElementById('header').textContent = 'Changed Content Using ID'
+    //Task 2 -> Select an HTML element by its class and change its background color.
+    document.querySelector('.para').style.backgroundColor = 'blue'
+
+
+    // <!-- Activity 2 -> Creating and Appending elements.-->
+    //Task 3 -> Create a new div element with some text content and append it to body.
+    const newDiv = document.createElement('div');
+    newDiv.innerText = 'Content created in new div';
+    document.querySelector('body').appendChild(newDiv);
+    //Task 4 -> Create a new li element and add it to an existing ul list.
+    const ul = document.querySelector('ul')
+    const newLi = document.createElement('li')
+    newLi.innerText = 'new li'
+    ul.appendChild(newLi)
+
+
+    // <!-- Activity 3 ->Removing elements.-->
+    //Task 5 -> Select an HTML element and remove it from DOM.
+    newLi.remove()
+    //Task 6 -> Remove the last child of specific element.
+    const lastLi = document.getElementsByTagName('li')
+    lastLi[lastLi.length - 1].remove()
+
+
+    // <!-- Activity 4 ->Modifying attributes and classes.-->
+    //Task 7 -> Select HTML element and change its attribute.
+    const img = document.querySelector('.img')
+    img.setAttribute("src", "sample-img.jpg")
+    img.style.height = "200px"
+    img.style.width = "500px"
+
+    //Task 8 -> Add and remove a CSS class to/from an HTML element.
+    const element = document.querySelector('#header');
+    element.classList.add('new-class');
+
+    element.classList.remove('new-class');
+
+    // <!-- Activity 5 ->Event Handling.-->
+    //Task 9 -> Add click event listener to a button that changes the text content of paragraph.
+    const button = document.getElementById('changeTextButton');
+    const paragraph = document.querySelector('.para');
+    button.addEventListener('click', () => {
+        paragraph.textContent = 'The text content has been changed!';
+    });
+
+    //Task 10 -> Add a mouse over event listener to an element that changes its border color.
+    const container = document.querySelector('.container');
+
+    container.addEventListener('mouseover', () => {
+        container.style.borderColor = 'red';
+    });
+
+    container.addEventListener('mouseout', () => {
+        container.style.borderColor = '#ccc';
+    });
+
+</script>
+</body>
+</html>
