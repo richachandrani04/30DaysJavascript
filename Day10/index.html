@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        body {
+            background-color: black;
+            color: aliceblue;
+        }
+        .container {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            color: aliceblue;
+        }
+        .img {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Day 10 - Events</h2>
+        <p class="txt">This is a content paragraph.</p>
+        <button class="button"> Click Me </button>
+        <div>
+            <img src="../Day09/sample-img.jpg" height="200px" width="500px" class="img">
+        </div>
+        <div class="input-text">
+            <input type="text" placeholder="Type something..." >
+            <p class="display"></p>
+        </div>
+        <div>
+            <form id="form">
+                <input type="email" placeholder="Enter your email...">
+                <input type="password" placeholder="Enter your password...">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div>
+            <h2>Dropdown Events</h2>
+            <select class="dropdown">
+                <option value="milk">milk</option>
+                <option value="butter">butter</option>
+                <option value="toast">toast</option>
+            </select>
+            <p class="display2">Selected value: </p>
+        </div>
+        <div>
+            <h2>Event Delegation</h2>
+            <ul class="list">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="events.js" ></script>
+</html>
